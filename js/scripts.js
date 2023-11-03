@@ -1,3 +1,7 @@
+// Business Logic
+
+//// Pizza Price Logic
+
 function Pizza(toppings, baseSauce, baseCheese, size) {
     this.toppings = toppings;
     this.baseSauce = baseSauce;
@@ -33,3 +37,12 @@ Pizza.prototype.cost = function() {
     const cheeseCost = baseCheese[orderedCheese];
     return sizeCost + sauceCost + cheeseCost + toppingCost;
 }
+
+// UI Logic
+function ingredientFetcher(e) {
+    console.log("ok tony! i hear " + e.target.id)
+}
+
+window.addEventListener("load",() => {
+    document.getElementById("order-form").addEventListener("change", ingredientFetcher)
+})
