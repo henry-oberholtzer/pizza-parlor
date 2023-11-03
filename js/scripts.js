@@ -48,6 +48,7 @@ Pizza.prototype.printTicket = function () {
         fourcheese: "Four Cheese",
         vegan: "Vegan & Non-Dairy",
         small: "Small",
+        medium: "Medium",
         large: "Large",
         xlarge: "X-Large",
         greenbellpeppers: "Green Bell Peppers",
@@ -120,7 +121,9 @@ function orderPrinter(e) {
     const pizzaNum = document.querySelector(".orders").childElementCount + 1;
     const ticketDiv = document.createElement("div");
     const pizzaH3 = document.createElement("h3");
+    ticket.setAttribute("class", "card-subtitle mx-2")
     pizzaH3.append("#" + pizzaNum + ": €" + price);
+    pizzaH3.setAttribute("class", "card-title mx-2");
     ticketDiv.append(pizzaH3);
     ticketDiv.append(ticket);
     if (pizzaNum === 1) {
@@ -131,6 +134,8 @@ function orderPrinter(e) {
             parseInt(document.getElementById("totalcost").innerText) + price;
         document.getElementById("totalcost").innerText = totalcost;
     }
+    ticketDiv.setAttribute("class", "card")
+    ticketDiv.setAttribute("id", "order-ticket")
     document.querySelector(".orders").append(ticketDiv);
     document.getElementById("order-form").reset();
 }
