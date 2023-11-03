@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/scripts.js"></script>
+    <link href="./css/stytles.css" rel="stylesheet" type="text/css">
+    <link href="./img/favicon_2.ico" rel="icon" type="image/x-icon">
+    <title>Pontiff's Pizza Parlor</title>
+</head>
+<body>
+    <div id="header">
+        <div id="col1">
+            <img id="logo" src="img/logo.png">
+        </div>
+        <div id="col2">
+            <h1>Pontiff's Pizza Parlor</h1>
+            <p id="tagline">"Ungodly Good Pizza"</p>
+        </div>
+        <div id="col3">
+            <div id="address">
+                <address>Piazza San Pietro</address>
+                <address>00120 Città del Vaticano</address>
+                <address><a href="tel:55555555555">+39 06 6982</a></address>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="order-form">
+            <form id="order-form">
+                <div class="topping-category">
+                    <h2>Size:</h2>
+                    <input name="size" type="radio" id="large" value="large" checked>
+                    <label for="large">Large 12"</label>
+                    <input name="size" type="radio" id="xlarge" value="xlarge">
+                    <label for="xlarge">X-Large 14"</label>
+                    <input name="size" type="radio" id="medium" value="medium">
+                    <label for="medium">Medium 10"</label>
+                    <input name="size" type="radio" id="small" value="small">
+                    <label for="small">Small 8"</label>
+                </div>
+                <div class="topping-category">
+                    <h2>Sauce:</h2>
+                    <input name="sauce" type="radio" id="marinara" value="marinara" checked>
+                    <label for="marinara">Marinara <span class="price">- Default</span></label>
+                    <input name="sauce" type="radio" id="whitesauce" value="whitesauce">
+                    <label for="White Sauce">White Sauce</label>
+                    <input name="sauce" type="radio" id="pesto" value="pesto">
+                    <label for="pesto">Pesto <span class="price">+ 1€</span></label>
+                    <input name="sauce" type="radio" id="none" value="none">
+                    <label for="none">None <span class="price">- 2€</span></label>
+                </div>
+                <div class="topping-category">
+                    <h2>Cheese:</h2>
+                    <input name="cheese" type="radio" id="mozzarella" value="mozzarella" checked>
+                    <label for="mozzarella">Mozzarella <span class="price">- Default</span></label>
+                    <input name="cheese" type="radio" id="fourcheese" value="fourcheese">
+                    <label for="fourcheese">Four Cheese <span class="price">+ 1€</span></label>
+                    <input name="cheese" type="radio" id="vegan" value="vegan">
+                    <label for="vegan">Vegan / Non-Dairy <span class="price">+ 1€</span></label>
+                    <input name="cheese" type="radio" id="none" value="none">
+                    <label for="none">None <span class="price">- 2€</span></label>
+
+                </div>
+                <div class="topping-category">
+                    <h2>Pick Your Toppings</h2>
+                    <p><span class="price">2€ each</span></p>
+                    <input name="topping" type="checkbox" id="greenbellpeppers" value="greenbellpeppers">
+                    <label for="greenbellpeppers">Green Bell Peppers</label>
+                    <input name="topping"  type="checkbox" id="redbellpeppers" value="redbellpeppers">
+                    <label for="redbellpeppers">Red Bell Peppers</label>
+                    <input name="topping" type="checkbox" id="blackolives" value="blackolives">
+                    <label for="blackolives">Black Olives</label>
+                    <input name="topping" type="checkbox" id="redonion" value="redonion">
+                    <label for="redonion">Red Onion</label>
+                    <input name="topping" type="checkbox" id="mushrooms" value="mushrooms">
+                    <label for="mushrooms">Mushrooms</label>
+                    <input name="topping" type="checkbox" id="arthichoke" value="artichoke">
+                    <label for="artichoke">Artichoke Hearts</label>
+                    <input name="topping" type="checkbox" id="jalapeno" value="jalapeno">
+                    <label for="jalapeno">Jalapenos</label>
+                    <input name="topping" type="checkbox" id="peperonicini" value="peperonicini">
+                    <label for="peperonicini">Peperonicini</label>
+                </div>
+                <div class="price"></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
