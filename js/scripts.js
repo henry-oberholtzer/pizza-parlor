@@ -5,12 +5,14 @@ function Pizza(toppings, base, size) {
 }
 
 Pizza.prototype.cost = function() {
-    const sizeCost = {
+    const size = {
         small: 8,
         medium: 10,
         large: 12,
         xlarge: 14,
     };
     const orderedSize = this.size;
-    return sizeCost[orderedSize];
+    const sizeCost = size[orderedSize];
+    const numToppings = this.toppings.length;
+    return sizeCost + (numToppings * 2);
 }
