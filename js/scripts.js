@@ -38,11 +38,94 @@ Pizza.prototype.cost = function() {
     return sizeCost + sauceCost + cheeseCost + toppingCost;
 }
 
-// UI Logic
-function ingredientFetcher(e) {
-    console.log("ok tony! i hear " + e.target.id)
+Pizza.prototype.printTicket = function() {
+    const toppingPrintable = {
+        none: "None",
+        marinara: "Marinara",
+        pesto: "Pesto",
+        whitesauce: "White Sauce",
+        mozzarella: "Mozzarella",
+        fourcheese: "Four Cheese",
+        vegan: "Vegan & Non-Dairy",
+        small: "Small",
+        large: "Large",
+        xlarge: "X-Large",
+        greenbellpeppers: "Green Bell Peppers",
+        redbellpeppers: "Red Bell Peppers",
+        blackolives: "Black Olives",
+        redonion: "Red Onion",
+        mushrooms: "Mushrooms",
+        artichoke: "Artichoke Hearts",
+        jalapeno: "Jalapenos",
+        peperonicini: "Peperonicini",
+    };
+    const mainDiv = document.createElement("div");
+    const sizeP = document.createElement("p");
+    const cheeseP = document.createElement("p");
+    const sauceP = document.createElement("p");
+    const toppingP = document.createElement("P");
+    const toppingUl = document.createElement("ul");
+    mainDiv.setAttribute("class", "order-ticket");
+    sizeP.append("Size: " + toppingPrintable[this.size]);
+    cheeseP.append("Cheese: " + toppingPrintable[this.baseCheese]);
+    sauceP.append("Sauce: " + toppingPrintable[this.baseSauce]);
+    toppingP.append("Selected Toppings:")
+    const toppings = this.toppings;
+    toppings.forEach((topping) => {
+        const li = document.createElement("li");
+        li.append(toppingPrintable[topping]);
+        toppingUl.append(li);
+    })
+    mainDiv.append(sizeP);
+    mainDiv.append(cheeseP);
+    mainDiv.append(sauceP);
+    mainDiv.append(toppingP);
+    mainDiv.append(toppingUl);
+    return mainDiv;
 }
 
-window.addEventListener("load",() => {
-    document.getElementById("order-form").addEventListener("change", ingredientFetcher)
-})
+// UI Logic
+function getToppings(nodeList) {
+    let resultArray = []
+    nodeList.forEach((element) => {
+        resultArray.push(element.value)
+    })
+    return resultArray;
+}
+
+function pizzaBuilder() {
+    const getSize = document.querySelector('input[name="size"]:checked').value;
+    const getBaseSauce = document.querySelector('input[name="sauce"]:checked').value;
+    const getBaseCheese = document.querySelector('input[name="cheese"]:checked').value;
+    const toppings = document.querySelectorAll('input[name="topping"]:checked');
+    const getToppingList = getToppings(toppings);
+    const newPizza = new Pizza(getToppingList, getBaseSauce, getBaseCheese, getSize);
+    return newPizza;
+}
+
+function orderPrinter(e) {
+    e.preventDefault();
+    const pizza = pizzaBuilder()
+    const price = pizza.cost()
+    const ticket = pizza.printTicket();
+    const pizzaNum = document.querySelector(".orders").childElementCount + 1;
+    const ticketDiv = document.createElement("div");
+    const pizzaH3 = document.createElement("h3");
+    pizzaH3.append("#" + pizzaNum + ": €" + price)
+    ticketDiv.append(pizzaH3);
+    ticketDiv.append(ticket);
+    if (pizzaNum === 1) {
+        const totalcost = price;
+        document.getElementById("totalcost").innerText = totalcost;
+    } else {
+        const totalcost = parseInt(document.getElementById("totalcost").innerText) + price;
+        document.getElementById("totalcost").innerText = totalcost;
+    }
+    document.querySelector(".orders").append(ticketDiv);
+    document.getElementById("order-form").reset();
+}
+
+window.addEventListener("load", () => {
+    document.querySelector(".orders").innerHTML = ""
+    document.getElementById("order-form").addEventListener("submit", orderPrinter);
+});
