@@ -9,7 +9,7 @@ function Pizza(toppings, baseSauce, baseCheese, size) {
     this.size = size;
 }
 
-Pizza.prototype.cost = function() {
+Pizza.prototype.cost = function () {
     const size = {
         small: 8,
         medium: 10,
@@ -27,7 +27,7 @@ Pizza.prototype.cost = function() {
         mozzarella: 3,
         fourcheese: 4,
         vegan: 4,
-    }
+    };
     const orderedSize = this.size;
     const orderedSauce = this.baseSauce;
     const orderedCheese = this.baseCheese;
@@ -36,9 +36,9 @@ Pizza.prototype.cost = function() {
     const sauceCost = baseSauce[orderedSauce];
     const cheeseCost = baseCheese[orderedCheese];
     return sizeCost + sauceCost + cheeseCost + toppingCost;
-}
+};
 
-Pizza.prototype.printTicket = function() {
+Pizza.prototype.printTicket = function () {
     const toppingPrintable = {
         none: "None",
         marinara: "Marinara",
@@ -69,56 +69,66 @@ Pizza.prototype.printTicket = function() {
     sizeP.append("Size: " + toppingPrintable[this.size]);
     cheeseP.append("Cheese: " + toppingPrintable[this.baseCheese]);
     sauceP.append("Sauce: " + toppingPrintable[this.baseSauce]);
-    toppingP.append("Selected Toppings:")
+    toppingP.append("Selected Toppings:");
     const toppings = this.toppings;
     toppings.forEach((topping) => {
         const li = document.createElement("li");
         li.append(toppingPrintable[topping]);
         toppingUl.append(li);
-    })
+    });
     mainDiv.append(sizeP);
     mainDiv.append(cheeseP);
     mainDiv.append(sauceP);
     mainDiv.append(toppingP);
     mainDiv.append(toppingUl);
     return mainDiv;
-}
+};
 
 // UI Logic
 function getToppings(nodeList) {
-    let resultArray = []
+    let resultArray = [];
     nodeList.forEach((element) => {
-        resultArray.push(element.value)
-    })
+        resultArray.push(element.value);
+    });
     return resultArray;
 }
 
 function pizzaBuilder() {
     const getSize = document.querySelector('input[name="size"]:checked').value;
-    const getBaseSauce = document.querySelector('input[name="sauce"]:checked').value;
-    const getBaseCheese = document.querySelector('input[name="cheese"]:checked').value;
+    const getBaseSauce = document.querySelector(
+        'input[name="sauce"]:checked'
+    ).value;
+    const getBaseCheese = document.querySelector(
+        'input[name="cheese"]:checked'
+    ).value;
     const toppings = document.querySelectorAll('input[name="topping"]:checked');
     const getToppingList = getToppings(toppings);
-    const newPizza = new Pizza(getToppingList, getBaseSauce, getBaseCheese, getSize);
+    const newPizza = new Pizza(
+        getToppingList,
+        getBaseSauce,
+        getBaseCheese,
+        getSize
+    );
     return newPizza;
 }
 
 function orderPrinter(e) {
     e.preventDefault();
-    const pizza = pizzaBuilder()
-    const price = pizza.cost()
+    const pizza = pizzaBuilder();
+    const price = pizza.cost();
     const ticket = pizza.printTicket();
     const pizzaNum = document.querySelector(".orders").childElementCount + 1;
     const ticketDiv = document.createElement("div");
     const pizzaH3 = document.createElement("h3");
-    pizzaH3.append("#" + pizzaNum + ": €" + price)
+    pizzaH3.append("#" + pizzaNum + ": €" + price);
     ticketDiv.append(pizzaH3);
     ticketDiv.append(ticket);
     if (pizzaNum === 1) {
         const totalcost = price;
         document.getElementById("totalcost").innerText = totalcost;
     } else {
-        const totalcost = parseInt(document.getElementById("totalcost").innerText) + price;
+        const totalcost =
+            parseInt(document.getElementById("totalcost").innerText) + price;
         document.getElementById("totalcost").innerText = totalcost;
     }
     document.querySelector(".orders").append(ticketDiv);
@@ -126,6 +136,8 @@ function orderPrinter(e) {
 }
 
 window.addEventListener("load", () => {
-    document.querySelector(".orders").innerHTML = ""
-    document.getElementById("order-form").addEventListener("submit", orderPrinter);
+    document.querySelector(".orders").innerHTML = "";
+    document
+        .getElementById("order-form")
+        .addEventListener("submit", orderPrinter);
 });

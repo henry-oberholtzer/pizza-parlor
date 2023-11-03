@@ -1,0 +1,44 @@
+:root {
+    --background-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: -1px;
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+
+.page {
+    margin: auto;
+    margin-top: 2vw;
+    width: 50vw;
+    max-width: 80vw;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    height: 20vh;
+    justify-content: center;
+    text-align: center;
+}
+
+#col1 {
+    width: 300px;
+}
+
+#col2 {
+    flex-grow: 3;
+}
+
+#col3 {
+    text-align: left;
+}
+
+#logo {
+    max-height: 300px;
+    height: 100%;
+}
