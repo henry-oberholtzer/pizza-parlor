@@ -8,33 +8,35 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+            crossorigin="anonymous" />
         <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Damion&family=VT323&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Damion&family=PT+Serif:wght@400;700&family=VT323&display=swap"
+            rel="stylesheet" />
         <link href="./img/favicon_2.ico" rel="icon" type="image/x-icon" />
         <title>Pontiff's Pizza Parlor</title>
     </head>
     <body>
         <div class="container-sm mx-auto">
             <div id="header" class="row mt-4">
-                <div class="col">
-                    <img id="logo" class="img-fluid" src="img/logo.png" />
+                <div class="col d-flex align-items-center">
+                    <img id="logo" src="img/logo.png" />
                 </div>
                 <div class="col-6 d-flex align-items-center">
                     <div>
-                    <h1>Pontiff's Pizza Parlor</h1>
-                    <p id="tagline">"Ungodly Good Pizza"</p>
+                        <h1>Pontiff's Pizza Parlor</h1>
+                        <p id="tagline">
+                            "The pizza is round and it is essentially bread"
+                        </p>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col d-flex align-items-center">
                     <div id="address">
-                        <address>Piazza San Pietro</address>
-                        <address>00120 Città del Vaticano</address>
                         <address>
+                            Piazza San Pietro<br />
+                            00120 Città del Vaticano<br />
                             <a href="tel:55555555555">+39 06 6982</a>
                         </address>
                     </div>
@@ -53,8 +55,7 @@
                                         type="radio"
                                         id="large"
                                         value="large"
-                                        checked
-                                    />
+                                        checked />
                                     <label class="form-check-label" for="large"
                                         >Large 12"</label
                                     >
@@ -65,8 +66,7 @@
                                         name="size"
                                         type="radio"
                                         id="xlarge"
-                                        value="xlarge"
-                                    />
+                                        value="xlarge" />
                                     <label class="form-check-label" for="xlarge"
                                         >X-Large 14"</label
                                     >
@@ -77,8 +77,7 @@
                                         name="size"
                                         type="radio"
                                         id="medium"
-                                        value="medium"
-                                    />
+                                        value="medium" />
                                     <label class="form-check-label" for="medium"
                                         >Medium 10"</label
                                     >
@@ -89,8 +88,7 @@
                                         name="size"
                                         type="radio"
                                         id="small"
-                                        value="small"
-                                    />
+                                        value="small" />
                                     <label class="form-check-label" for="small"
                                         >Small 8"</label
                                     >
@@ -105,8 +103,7 @@
                                         type="radio"
                                         id="marinara"
                                         value="marinara"
-                                        checked
-                                    />
+                                        checked />
                                     <label
                                         class="form-check-label"
                                         for="marinara"
@@ -122,8 +119,7 @@
                                         name="sauce"
                                         type="radio"
                                         id="whitesauce"
-                                        value="whitesauce"
-                                    />
+                                        value="whitesauce" />
                                     <label
                                         class="form-check-label"
                                         for="White Sauce"
@@ -136,8 +132,7 @@
                                         name="sauce"
                                         type="radio"
                                         id="pesto"
-                                        value="pesto"
-                                    />
+                                        value="pesto" />
                                     <label class="form-check-label" for="pesto"
                                         >Pesto
                                         <span class="price">+ 1€</span></label
@@ -149,8 +144,7 @@
                                         name="sauce"
                                         type="radio"
                                         id="none"
-                                        value="none"
-                                    />
+                                        value="none" />
                                     <label class="form-check-label" for="none"
                                         >None
                                         <span class="price">- 2€</span></label
@@ -166,8 +160,7 @@
                                         type="radio"
                                         id="mozzarella"
                                         value="mozzarella"
-                                        checked
-                                    />
+                                        checked />
                                     <label
                                         class="form-check-label"
                                         for="mozzarella"
@@ -183,8 +176,7 @@
                                         name="cheese"
                                         type="radio"
                                         id="fourcheese"
-                                        value="fourcheese"
-                                    />
+                                        value="fourcheese" />
                                     <label
                                         class="form-check-label"
                                         for="fourcheese"
@@ -198,8 +190,7 @@
                                         name="cheese"
                                         type="radio"
                                         id="vegan"
-                                        value="vegan"
-                                    />
+                                        value="vegan" />
                                     <label class="form-check-label" for="vegan"
                                         >Vegan / Non-Dairy
                                         <span class="price">+ 1€</span></label
@@ -211,8 +202,7 @@
                                         name="cheese"
                                         type="radio"
                                         id="none"
-                                        value="none"
-                                    />
+                                        value="none" />
                                     <label class="form-check-label" for="none"
                                         >None
                                         <span class="price">- 2€</span></label
@@ -230,8 +220,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="greenbellpeppers"
-                                        value="greenbellpeppers"
-                                    />
+                                        value="greenbellpeppers" />
                                     <label
                                         class="form-check-label"
                                         for="greenbellpeppers"
@@ -244,8 +233,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="redbellpeppers"
-                                        value="redbellpeppers"
-                                    />
+                                        value="redbellpeppers" />
                                     <label
                                         class="form-check-label"
                                         for="redbellpeppers"
@@ -258,8 +246,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="blackolives"
-                                        value="blackolives"
-                                    />
+                                        value="blackolives" />
                                     <label
                                         class="form-check-label"
                                         for="blackolives"
@@ -272,8 +259,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="redonion"
-                                        value="redonion"
-                                    />
+                                        value="redonion" />
                                     <label
                                         class="form-check-label"
                                         for="redonion"
@@ -286,8 +272,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="mushrooms"
-                                        value="mushrooms"
-                                    />
+                                        value="mushrooms" />
                                     <label
                                         class="form-check-label"
                                         for="mushrooms"
@@ -300,8 +285,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="arthichoke"
-                                        value="artichoke"
-                                    />
+                                        value="artichoke" />
                                     <label
                                         class="form-check-label"
                                         for="artichoke"
@@ -314,8 +298,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="jalapeno"
-                                        value="jalapeno"
-                                    />
+                                        value="jalapeno" />
                                     <label
                                         class="form-check-label"
                                         for="jalapeno"
@@ -328,8 +311,7 @@
                                         name="topping"
                                         type="checkbox"
                                         id="peperonicini"
-                                        value="peperonicini"
-                                    />
+                                        value="peperonicini" />
                                     <label
                                         class="form-check-label"
                                         for="peperonicini"
@@ -338,17 +320,18 @@
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-success" id="build-pizza">
+                                <button
+                                    type="submit"
+                                    class="btn btn-success"
+                                    id="build-pizza">
                                     Add to Order!
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div id="content" class="total w-100 mt-4 p-3">
-                    <h2>
-                        Current Order Total: €<span id="totalcost"></span>
-                    </h2>
+                <div id="content" class="total row mt-4 p-3">
+                    <h2>Current Order Total: €<span id="totalcost"></span></h2>
                 </div>
                 <div class="orders"></div>
             </div>

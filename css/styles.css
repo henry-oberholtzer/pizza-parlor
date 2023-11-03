@@ -1,6 +1,11 @@
+body {
+    font-family: 'PT Serif', serif;
+}
+
 #logo {
-    height: 100%;
-    padding: 2vw;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 3vw;
 }
 
 #header {
@@ -17,9 +22,20 @@
     font-style: italic;
 }
 
+address {
+    font-style: italic;
+    color: black;
+}
+
+address a {
+    color: black;
+    text-decoration: none;
+}
+
 h1 {
     font-family: 'Damion', cursive;
     color: gold;
+    font-size: 4rem;
 }
 
 .orders {
