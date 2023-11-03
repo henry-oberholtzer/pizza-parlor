@@ -20,12 +20,13 @@ A JS Web Application by Henry Oberholtzer
 
 #### Describe: Pizza()
 Test: It should return an object of a new pizza, with properties for toppings, base, and size.
-Code: const newPizza = new Pizza(["artichoke","green bell peppers", "mushrooms"], ["cheese", "red sauce"], "large");
+Code: const newPizza = new Pizza(["artichoke","green bell peppers", "mushrooms"], "marinara", "mozzarella", "large");
 Expected Output:
 
 newPizza: {
     toppings: ["artichoke","green bell peppers", "mushrooms"],
-    base: ["cheese", "red sauce"],
+    baseSauce: "marinara",
+    baseCheese: "mozzarella",
     size: "large",
 }
 
